@@ -3,10 +3,10 @@
 __author__ = "730556372"
 
 secret: str = "python" #Choosing the secret word
-secret_length: int = len(secret) #Making sure the code does not break 
-                           #if the secret word has a different length
-guess: str = input(f"What is your { secret_length }-letter guess? ")
-print(secret_length)
+secret_length: int = len(secret) # Making sure the code does not break 
+                           # If the secret word has a different length
+guess: str = input(f"What is your { secret_length }-letter guess? ") 
+                                 # Getting an initial guess
 
 if (len(guess) == secret_length): # If the guess is the right length
     if (guess == secret):
@@ -18,6 +18,7 @@ if (len(guess) == secret_length): # If the guess is the right length
 
 while (len(guess) != secret_length):
     guess = input(f"That was not { secret_length } letters! Try again: ")
+                                      # Getting a new guess
     if (len(guess) == secret_length): # If the guess is the right length
         if (guess == secret):
             print("Woo! You got it!")
