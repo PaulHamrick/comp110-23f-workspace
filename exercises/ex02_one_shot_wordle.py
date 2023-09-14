@@ -27,10 +27,11 @@ if (len(guess) == secret_length): # If the guess is the right length
         else:
             yellow_string_idx = 0
             does_letter_appear_elsewhere = False
-            while (yellow_string_idx < secret_length):
-                if (guess[string_idx] == secret[yellow_string_idx]):
+            while (yellow_string_idx < secret_length): # Iterating over possible indices of the secret word
+                if (guess[string_idx] == secret[yellow_string_idx]): #Checking if the secret word matches the guess
                     does_letter_appear_elsewhere = True
                 yellow_string_idx += 1
+            # Adding whichever of YELLOW_BOX and WHITE_BOX is appropriate
             if (does_letter_appear_elsewhere == True):
                 output_boxes += YELLOW_BOX
             else:
@@ -52,7 +53,16 @@ while (len(guess) != secret_length):
             if (guess[string_idx] == secret[string_idx]):
                 output_boxes += GREEN_BOX
             else:
-                output_boxes += WHITE_BOX
+                yellow_string_idx = 0
+                does_letter_appear_elsewhere = False
+                while (yellow_string_idx < secret_length):
+                    if (guess[string_idx] == secret[yellow_string_idx]):
+                        does_letter_appear_elsewhere = True
+                    yellow_string_idx += 1
+                if (does_letter_appear_elsewhere == True):
+                    output_boxes += YELLOW_BOX
+                else:
+                    output_boxes += WHITE_BOX
             string_idx += 1
         print(output_boxes)
         if (guess == secret):
