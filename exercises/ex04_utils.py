@@ -2,9 +2,9 @@
 
 __author__ = "730556372"
 
+
 def all(some_integers: list[int], check_int: int) -> bool:
     """Checking if all the integers in a list are equal to a particular integer."""
-
     list_length: int = len(some_integers)
     if list_length == 0:  # Checking if the list is empty
         return False
@@ -16,9 +16,9 @@ def all(some_integers: list[int], check_int: int) -> bool:
         list_idx += 1
     return True
 
+
 def max(integer_list: list[int]) -> int:
     """Getting the greatest number from a list."""
-    
     list_length: int = len(integer_list)
     if list_length == 0:
         raise ValueError("max() arg is an empty List")
@@ -33,9 +33,9 @@ def max(integer_list: list[int]) -> int:
         list_idx += 1
     return list_max
 
+
 def is_equal(first_list: list[int], second_list: list[int]) -> bool:
     """Figuring out if two lists are the same."""
-
     if len(first_list) != len(second_list):  # Making sure the lengths are the same
         return False
     
