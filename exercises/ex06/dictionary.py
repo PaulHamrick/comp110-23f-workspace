@@ -75,9 +75,8 @@ def alphabetizer(strings_to_sort: list[str]) -> dict[str, list[str]]:
 def update_attendance(attendance_log: dict[str, list[str]], week_day: str, student: str) -> dict[str, list[str]]:
     """Updating attendance."""
     if week_day in attendance_log:  # Either adding the student to the week day or adding a pair of the week day and the student
-        attendance_log[week_day].append(student)
+        if student not in attendance_log[week_day]:
+            attendance_log[week_day].append(student)
     else:
         attendance_log[week_day] = [student]
     return attendance_log
-
-print(alphabetizer(["A", "spectre", "is", "haunting", "Europe", "the", "spectre", "of", "communism", "All", "the", "powers", "of", "old", "Europe", "have", "entered", "into", "a", "holy", "alliance", "to", "exorcise", "this", "spectre", "Pope", "and", "Tsar", "Metternich", "and", "Guizot", "French", "Radicals", "and", "German", "police-spies"]))
