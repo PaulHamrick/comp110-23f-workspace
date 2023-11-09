@@ -29,3 +29,6 @@ class Pizza:
     def add_toppings(self, num_toppings: int):
         """Add toppings to existing pizza"""
         self.toppings += num_toppings
+
+    def __str__(self) -> str:
+        return "This is a pizza!"
