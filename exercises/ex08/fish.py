@@ -1,9 +1,18 @@
-"""File to define Fish class"""
+"""File to define Fish class."""
+
+
+__author__ = "730556372"
+
 
 class Fish:
+    """Simulating a fish."""
+
+    age: int
     
     def __init__(self):
-        return None
+        """Initializing the age."""
+        self.age = 0
     
     def one_day(self):
-        return None
+        """Updating fish."""
+        self.age += 1
